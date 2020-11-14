@@ -19,7 +19,7 @@ public final class EdenMCWelcome extends JavaPlugin implements Listener {
 
     public void onEnable() {
         getServer().getPluginManager().registerEvents(this, this);
-        getCommand("welcome").setExecutor(this);
+        getCommand("b").setExecutor(this);
     }
 
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {

@@ -2,7 +2,7 @@ name: EdenMCWelcome
 version: ${project.version}
 main: fr.steven.edenmcwelcome.EdenMCWelcome
 api-version: 1.16
-description: Plugin description
+description: Simple minecraft plugin that allow users to welcome new players
 commands:
-  welcome:
-    description: Main command
+  b:
+    description: Welcome a new player
