@@ -1,0 +1,8 @@
+name: EdenMCWelcome
+version: ${project.version}
+main: fr.steven.edenmcwelcome.EdenMCWelcome
+api-version: 1.16
+description: Plugin description
+commands:
+  welcome:
+    description: Main command
