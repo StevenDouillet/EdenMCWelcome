@@ -9,13 +9,20 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 public final class EdenMCWelcome extends JavaPlugin implements Listener {
 
     public static Map<String, Long> newPlayer = new HashMap<>();
     public static Map<String, Long> welcomeSended = new HashMap<>();
+    public static List<String> welcomeMessages = Arrays.asList(
+            "Bienvenue " + ChatColor.BLUE + "%player%" + ChatColor.WHITE + " sur le serveur !",
+            "Bienvenue " + ChatColor.BLUE + "%player%" + ChatColor.WHITE + " sur EdenCraft :)",
+            "Bienvenue " + ChatColor.BLUE + "%player%",
+            "Bienvenue " + ChatColor.BLUE + "%player%" + ChatColor.WHITE + " et bon jeu",
+            "Welcome " + ChatColor.BLUE + "%player%",
+            "Bienvenue parmi nous " + ChatColor.BLUE + "%player%" + ChatColor.WHITE + " :)"
+    );
 
     public void onEnable() {
         getServer().getPluginManager().registerEvents(this, this);
@@ -45,7 +52,8 @@ public final class EdenMCWelcome extends JavaPlugin implements Listener {
                         if(newPlayerName.equals(playerSender.getDisplayName())) {
                             playerSender.chat("Je me souhaite la bienvenue");
                         } else {
-                            playerSender.chat("Bienvenue " + ChatColor.BLUE + newPlayerName + ChatColor.WHITE + " sur EdenCraft :)");
+                            Random rand = new Random();
+                            playerSender.chat(welcomeMessages.get(rand.nextInt(welcomeMessages.size())).replace("%player%", newPlayerName));
                         }
                     }
 
